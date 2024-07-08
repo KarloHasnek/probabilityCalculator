@@ -17,7 +17,7 @@
         <div class="content">
             <div class="content-section">
                 <span>DS:</span>
-                <input type="text" id="totalCards" placeholder="deck size">
+                <input type="number" class="input-num" id="deckSize" placeholder="deck size">
                 <div class="info-icon">
                     <div class="tooltip">Input size of your deck here</div>
                     <img src="./assets/001-info.png" alt="Info" class="icon">
@@ -25,7 +25,7 @@
             </div>
             <div class="content-section">
                 <span>WC:</span>
-                <input type="text" id="totalCards" placeholder="number of wanted cards">
+                <input type="number" class="input-num" id="wantedCards" placeholder="wanted cards">
                 <div class="info-icon">
                     <div class="tooltip">Input number of your wanted cards here (example: insert 3 if you have 3 copies of a card in deck)</div>
                     <img src="./assets/001-info.png" alt="Info" class="icon">
@@ -33,28 +33,42 @@
             </div>
             <div class="content-section">
                 <span>HS:</span>
-                <input type="text" id="totalCards" placeholder="hand size">
+                <input type="number" class="input-num" id="handSize" placeholder="hand size">
                 <div class="info-icon">
                     <div class="tooltip">Number of cards you want to draw in your hand (hand size)</div>
                     <img src="./assets/001-info.png" alt="Info" class="icon">
                 </div>
             </div>
-            <button id="calculate">Calculate</button>
-            <!-- <br> -->
+
+
+            <div class="btn-submit">
+                <span>Calculate</span>
+            </div>
+
+
             <div class="content-section top-border">
                 <div class="results">
                     <span>Probability of drawing...</span>
                     <div class="result-container">
                         <span id="one" class="result-display-info">at least 1:</span>
-                        <input type="text" class="result-display" value="Result" readonly>
+                        <div>
+                            <input type="text" class="result-display" value="Result" readonly>
+                            <span class="percent">%</span>
+                        </div>
                     </div>
                     <div class="result-container">
                         <span id="two" class="result-display-info">exactly 2:</span>
-                        <input type="text" class="result-display" value="Result" readonly>
+                        <div>
+                            <input type="text" class="result-display" value="Result" readonly>
+                            <span class="percent">%</span>
+                        </div>
                     </div>
                     <div class="result-container">
                         <span id="three" class="result-display-info">more than 3:</span>
-                        <input type="text" class="result-display" value="Result" readonly>
+                        <div>
+                            <input type="text" class="result-display" value="Result" readonly>
+                            <span class="percent">%</span>
+                        </div>
                     </div>
                 </div>
             </div>

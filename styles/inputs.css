@@ -1,0 +1,29 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid aliceblue;
+    border-radius: 25px;
+    width: 600px;
+    height: 420px;
+}
+
+#calculate {
+    margin: 5px 0px 15px;
+}
+
+.content-section {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-num {
+    height: 25px;
+    width: 120px;
+    border-radius: 5px;
+    margin-left: 3px;
+}
