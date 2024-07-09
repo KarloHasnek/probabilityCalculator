@@ -1,15 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const calculateBtn = document.querySelector('.btn-submit');
-    calculateBtn.addEventListener('click', calculateProbabilities);
+// event listeners for website
+document.addEventListener("DOMContentLoaded", () => {
+    const calculateBtn = document.querySelector(".btn-submit");
+    calculateBtn.addEventListener("click", calculateProbabilities);
 });
+document.addEventListener("keydown", handleEnterKeyPress);
 
+// function to calculate probabilities and display them
 function calculateProbabilities() {
-    const deckSize = parseInt(document.getElementById('deckSize').value);
-    const wantedCards = parseInt(document.getElementById('wantedCards').value);
-    const handSize = parseInt(document.getElementById('handSize').value);
-    const one = document.getElementById('one');
-    const two = document.getElementById('two');
-    const three = document.getElementById('three');
+    const deckSize = parseInt(document.getElementById("deckSize").value);
+    const wantedCards = parseInt(document.getElementById("wantedCards").value);
+    const handSize = parseInt(document.getElementById("handSize").value);
+    const one = document.getElementById("one");
+    const two = document.getElementById("two");
+    const three = document.getElementById("three");
 
     // console.log(deckSize, wantedCards, handSize);
 
@@ -40,11 +43,14 @@ function calculateProbabilities() {
         if (handSize < 3) {
             three.value = "N/A";
         } else {
-            const moreThanTwoResult = moreThanTwo(deckSize, wantedCards, handSize);
+            const moreThanTwoResult = moreThanTwo(
+                deckSize,
+                wantedCards,
+                handSize
+            );
             // console.log(moreThanTwoResult);
             three.value = moreThanTwoResult;
         }
-
     } else {
         two.value = "N/A";
         three.value = "N/A";
@@ -57,12 +63,12 @@ function atLeastOne(deckSize, wantedCards, handSize) {
     let result = 0;
 
     totalProbability = comb(deckSize, handSize);
-    notWantedProbability = comb((deckSize - wantedCards), handSize);
+    notWantedProbability = comb(deckSize - wantedCards, handSize);
 
-    result = (1 - (notWantedProbability / totalProbability)) * 100;
+    result = (1 - notWantedProbability / totalProbability) * 100;
     result = result.toFixed(3);
     // console.log(result);
-    return result;    
+    return result;
 }
 
 function exactlyTwo(deckSize, wantedCards, handSize) {
@@ -72,14 +78,14 @@ function exactlyTwo(deckSize, wantedCards, handSize) {
     let result = 0;
 
     totalProbability = comb(deckSize, handSize);
-    notWantedProbability = comb((deckSize - wantedCards), handSize - 2);
+    notWantedProbability = comb(deckSize - wantedCards, handSize - 2);
     numOfWaysWanted = comb(wantedCards, 2);
 
-    result = ((numOfWaysWanted * notWantedProbability) / totalProbability) * 100;
+    result =
+        ((numOfWaysWanted * notWantedProbability) / totalProbability) * 100;
     result = result.toFixed(3);
     // console.log(result);
     return result;
-    
 }
 
 function moreThanTwo(deckSize, wantedCards, handSize) {
@@ -91,7 +97,10 @@ function moreThanTwo(deckSize, wantedCards, handSize) {
     }
 
     function exactlyK(wanted, total, hand, k) {
-        return (comb(wanted, k) * comb(total - wanted, hand - k)) / comb(total, hand);
+        return (
+            (comb(wanted, k) * comb(total - wanted, hand - k)) /
+            comb(total, hand)
+        );
     }
 
     result = (result * 100).toFixed(3);
@@ -104,7 +113,7 @@ function comb(n, k) {
     return fact(n) / (fact(k) * fact(n - k));
 }
 
-// recursive factorial function
+// factorial function
 function fact(n) {
     let result = 1;
     for (let i = 2; i <= n; i++) {
@@ -112,3 +121,18 @@ function fact(n) {
     }
     return result;
 }
+
+// function to handle enter key press event
+function handleEnterKeyPress(event) {
+    if (event.key === "Enter") {
+        calculateProbabilities();
+    }
+}
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    // Get the input element
+    const inputElement = document.getElementById("deckSize");
+
+    // Set focus to the input element
+    inputElement.focus();
+});

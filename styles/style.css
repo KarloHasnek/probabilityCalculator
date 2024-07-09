@@ -1,12 +1,17 @@
-@import './styles/button.css';
-@import './styles/info.css';
-@import './styles/body.css';
-@import './styles/results.css';
-@import './styles/inputs.css';
+@import "./button.css";
+@import "./info.css";
+@import "./body.css";
+@import "./results.css";
+@import "./inputs.css";
 
 .top-border {
     border-top: 1px solid aliceblue;
-    border-image: linear-gradient(to right, rgba(0, 0, 0, 0.021), rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.021));
+    border-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.021),
+        rgba(255, 255, 255, 0.5),
+        rgba(0, 0, 0, 0.021)
+    );
     padding-top: 5px;
     border-image-slice: 1;
     width: 90%;
