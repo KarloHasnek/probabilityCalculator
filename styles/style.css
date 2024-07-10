@@ -17,19 +17,23 @@
     width: 90%;
 }
 
-/* Chrome, Safari, Edge, Opera
+/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-Firefox
+/* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
-} */
+}
 
 @media (max-width: 620px) {
+
+    .title {
+        display: ruby;
+    }
 
     .body {
         width: 100%;
@@ -41,7 +45,7 @@ input[type=number] {
     }
 
     .content {
-        width: 90%;
+        width: 85%;
         height: auto;
         padding: 20px;
     }
@@ -107,4 +111,14 @@ input[type=number] {
         visibility: hidden;
         opacity: 0;
     }
+}
+
+.attributions a {
+    color: gray;
+    text-decoration: none;
+}
+
+footer {
+    font-size: 0.8em;
+    align-self: flex-end;
 }

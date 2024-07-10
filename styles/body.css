@@ -4,7 +4,14 @@ body {
     font-style: normal;
     color: aliceblue;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+
+    /* adjustments made to fit the footer */
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
 }
 
 body::before {
