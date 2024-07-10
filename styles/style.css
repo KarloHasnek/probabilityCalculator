@@ -28,3 +28,83 @@ Firefox
 input[type=number] {
   -moz-appearance: textfield;
 } */
+
+@media (max-width: 620px) {
+
+    .body {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .container {
+        height: auto;
+    }
+
+    .content {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .content-section {
+        /* flex-direction: column; */
+        align-items: flex-start;
+        padding: 5px;
+    }
+
+    .input-num {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn-submit {
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        font-size: 1em;
+    }
+
+    .result-display {
+        width: 100%;
+        height: 30px;
+        font-size: 1em;
+    }
+
+    .result-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .result-display-info {
+        margin-bottom: 5px;
+    }
+
+    .result-percent {
+        display: flex;
+        align-items: center;
+    }
+
+    .percent {
+        margin-left: 5px;
+        font-size: 20px;
+    }
+
+    .tooltip {
+        width: auto;
+        max-width: 90%;
+        left: 100%;
+        bottom: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        /* transform: translateX(10px); */
+        transform: translateX(-170px);
+        opacity: 0;
+        transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    .info-icon:hover .tooltip {
+        visibility: hidden;
+        opacity: 0;
+    }
+}

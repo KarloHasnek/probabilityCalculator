@@ -136,3 +136,43 @@ document.addEventListener("DOMContentLoaded", (event) => {
     // Set focus to the input element
     inputElement.focus();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const mediaQuery = window.matchMedia("(max-width: 620px)");
+
+    function handleTooltipClick(event) {
+        const tooltipId = event.currentTarget.dataset.tooltipId;
+        const tooltip = document.getElementById(tooltipId);
+
+        if (tooltip.style.visibility === "visible") {
+            tooltip.style.visibility = "hidden";
+            tooltip.style.opacity = "0";
+        } else {
+            tooltip.style.visibility = "visible";
+            tooltip.style.opacity = "1";
+        }
+    }
+
+    function closeTooltip(event) {
+        const infoIcons = document.querySelectorAll(".info-icon");
+        infoIcons.forEach(icon => {
+            const tooltipId = icon.dataset.tooltipId;
+            const tooltip = document.getElementById(tooltipId);
+
+            if (!icon.contains(event.target) && tooltip.style.visibility === "visible") {
+                tooltip.style.visibility = "hidden";
+                tooltip.style.opacity = "0";
+            }
+        });
+    }
+
+    if (mediaQuery.matches) {
+        const infoIcons = document.querySelectorAll(".info-icon");
+        
+        infoIcons.forEach(icon => {
+            icon.addEventListener("click", handleTooltipClick);
+        });
+
+        document.addEventListener("click", closeTooltip);
+    }
+});

@@ -1,136 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="./assets/card-game.png" type="image/png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
-            rel="stylesheet"
-        />
-        <title>Cardgame Calculator</title>
-        <link rel="stylesheet" href="./styles/style.css" />
-        <script src="./scripts/script.js" defer></script>
-    </head>
-    <body>
-        <div class="container">
-            <h1 class="title">Cardgame Probability Calculator</h1>
-            <div class="content">
-                <div class="content-section">
-                    <span>DS:</span>
-                    <input
-                        type="number"
-                        class="input-num"
-                        id="deckSize"
-                        placeholder="deck size"
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/card-game.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
+        rel="stylesheet"
+    />
+    <title>Cardgame Calculator</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./scripts/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Cardgame Probability Calculator</h1>
+        <div class="content">
+            <div class="content-section">
+                <span>DS:</span>
+                <input
+                    type="number"
+                    class="input-num"
+                    id="deckSize"
+                    placeholder="deck size"
+                />
+                <div class="info-icon" data-tooltip-id="tooltip1">
+                    <div class="tooltip" id="tooltip1">Input size of your deck here</div>
+                    <img
+                        src="./assets/001-info.png"
+                        alt="Info"
+                        class="icon"
                     />
-                    <div class="info-icon">
-                        <div class="tooltip">Input size of your deck here</div>
-                        <img
-                            src="./assets/001-info.png"
-                            alt="Info"
-                            class="icon"
-                        />
-                    </div>
                 </div>
-                <div class="content-section">
-                    <span>WC:</span>
-                    <input
-                        type="number"
-                        class="input-num"
-                        id="wantedCards"
-                        placeholder="wanted cards"
+            </div>
+            <div class="content-section">
+                <span>WC:</span>
+                <input
+                    type="number"
+                    class="input-num"
+                    id="wantedCards"
+                    placeholder="wanted cards"
+                />
+                <div class="info-icon" data-tooltip-id="tooltip2">
+                    <div class="tooltip" id="tooltip2">
+                        Input number of your wanted cards here (example: insert 3 if you have 3 copies of a card in deck)
+                    </div>
+                    <img
+                        src="./assets/001-info.png"
+                        alt="Info"
+                        class="icon"
                     />
-                    <div class="info-icon">
-                        <div class="tooltip">
-                            Input number of your wanted cards here (example:
-                            insert 3 if you have 3 copies of a card in deck)
-                        </div>
-                        <img
-                            src="./assets/001-info.png"
-                            alt="Info"
-                            class="icon"
-                        />
-                    </div>
                 </div>
-                <div class="content-section">
-                    <span>HS:</span>
-                    <input
-                        type="number"
-                        class="input-num"
-                        id="handSize"
-                        placeholder="hand size"
+            </div>
+            <div class="content-section">
+                <span>HS:</span>
+                <input
+                    type="number"
+                    class="input-num"
+                    id="handSize"
+                    placeholder="hand size"
+                />
+                <div class="info-icon" data-tooltip-id="tooltip3">
+                    <div class="tooltip" id="tooltip3">
+                        Number of cards you want to draw in your hand (hand size)
+                    </div>
+                    <img
+                        src="./assets/001-info.png"
+                        alt="Info"
+                        class="icon"
                     />
-                    <div class="info-icon">
-                        <div class="tooltip">
-                            Number of cards you want to draw in your hand (hand
-                            size)
-                        </div>
-                        <img
-                            src="./assets/001-info.png"
-                            alt="Info"
-                            class="icon"
-                        />
-                    </div>
                 </div>
+            </div>
 
-                <div class="btn-submit">
-                    <span>Calculate</span>
-                </div>
+            <div class="btn-submit">
+                <span>Calculate</span>
+            </div>
 
-                <div class="content-section top-border">
-                    <div class="results">
-                        <span>Probability of drawing...</span>
-                        <div class="result-container">
-                            <span class="result-display-info"
-                                >at least 1 WC:</span
-                            >
-                            <div>
-                                <input
-                                    type="text"
-                                    id="one"
-                                    class="result-display"
-                                    value="Result"
-                                    readonly
-                                />
-                                <span class="percent">%</span>
-                            </div>
+            <div class="content-section top-border">
+                <div class="results">
+                    <span>Probability of drawing...</span>
+                    <div class="result-container">
+                        <span class="result-display-info">at least 1 WC:</span>
+                        <div class="result-percent">
+                            <input
+                                type="text"
+                                id="one"
+                                class="result-display"
+                                value="Result"
+                                readonly
+                            />
+                            <span class="percent">%</span>
                         </div>
-                        <div class="result-container">
-                            <span class="result-display-info"
-                                >exactly 2 WC:</span
-                            >
-                            <div>
-                                <input
-                                    type="text"
-                                    id="two"
-                                    class="result-display"
-                                    value="Result"
-                                    readonly
-                                />
-                                <span class="percent">%</span>
-                            </div>
+                    </div>
+                    <div class="result-container">
+                        <span class="result-display-info">exactly 2 WC:</span>
+                        <div class="result-percent">
+                            <input
+                                type="text"
+                                id="two"
+                                class="result-display"
+                                value="Result"
+                                readonly
+                            />
+                            <span class="percent">%</span>
                         </div>
-                        <div class="result-container">
-                            <span class="result-display-info"
-                                >more than 2 WC:</span
-                            >
-                            <div>
-                                <input
-                                    type="text"
-                                    id="three"
-                                    class="result-display"
-                                    value="Result"
-                                    readonly
-                                />
-                                <span class="percent">%</span>
-                            </div>
+                    </div>
+                    <div class="result-container">
+                        <span class="result-display-info">more than 2 WC:</span>
+                        <div class="result-percent">
+                            <input
+                                type="text"
+                                id="three"
+                                class="result-display"
+                                value="Result"
+                                readonly
+                            />
+                            <span class="percent">%</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</body>
 </html>
