@@ -63,7 +63,9 @@ function atLeastOne(deckSize, wantedCards, handSize) {
     let result = 0;
 
     totalProbability = comb(deckSize, handSize);
+    console.log(totalProbability);
     notWantedProbability = comb(deckSize - wantedCards, handSize);
+    console.log(notWantedProbability);
 
     result = (1 - notWantedProbability / totalProbability) * 100;
     result = result.toFixed(3);
@@ -128,14 +130,6 @@ function handleEnterKeyPress(event) {
         calculateProbabilities();
     }
 }
-
-document.addEventListener("DOMContentLoaded", (event) => {
-    // Get the input element
-    const inputElement = document.getElementById("deckSize");
-
-    // Set focus to the input element
-    inputElement.focus();
-});
 
 document.addEventListener("DOMContentLoaded", function() {
     const mediaQuery = window.matchMedia("(max-width: 620px)");

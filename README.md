@@ -6,6 +6,7 @@ A simple web-based application that calculates the probability of drawing specif
 
 - **Probability Calculations**
 - **Responsive Design**
+- **[Python script](./tests/tests.py) for manual testing**
 
 ## Getting Started
 
@@ -41,6 +42,8 @@ cardgame-probability-calculator/
 │   ├── inputs.css
 │   ├── results.css
 │   └── style.css
+├── tests/
+│   └── tests.py
 ├── index.html
 └── README.md
 ```
